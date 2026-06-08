@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Тетяна Пахалюк — сертифікований нутриціолог з Чернігова. Індивідуальні консультації, складання раціону харчування, корекція ваги та підтримка здоров'я." />
+  <meta name="keywords" content="нутриціолог Чернігів, консультація нутриціолога, правильне харчування, раціон харчування, Тетяна Пахалюк, схуднення, здорове харчування" />
+  <meta name="author" content="Тетяна Пахалюк" />
+  <meta property="og:title" content="Тетяна Пахалюк — Нутриціолог | Чернігів" />
+  <meta property="og:description" content="Сертифікований нутриціолог. Індивідуальний підхід, науковий підхід до харчування та стійкий результат." />
+  <meta property="og:type" content="website" />
+  <title>Тетяна Пахалюк — Нутриціолог | Чернігів</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #3a7d5a;
+      --green-dark:  #2a5c41;
+      --green-light: #5fa87c;
+      --green-pale:  #d4ead9;
+      --green-ghost: #f0f7f2;
+      --sage:        #8bb5a0;
+      --gold:        #c9a24c;
+      --bg:          #fafdf8;
+      --surface:     #f2f8f3;
+      --surface-2:   #e8f2eb;
+      --text:        #1e2e24;
+      --text-mid:    #4a6655;
+      --text-muted:  #7a9988;
+      --border:      rgba(58,125,90,0.16);
+      --border-soft: rgba(58,125,90,0.10);
+      --radius:      14px;
+      --radius-lg:   24px;
+      --radius-xl:   40px;
+      --shadow:      0 8px 40px rgba(42,92,65,0.12);
+      --shadow-sm:   0 2px 16px rgba(42,92,65,0.08);
+      --t:           0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.4rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--t);
+    }
+    .nav.scrolled {
+      background: rgba(250,253,248,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo {
+      display: flex; flex-direction: column; text-decoration: none;
+    }
+    .nav-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600; color: var(--green-dark);
+      line-height: 1.1;
+    }
+    .nav-logo-title {
+      font-size: 0.67rem; color: var(--sage); font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .nav-links { display: flex; list-style: none; gap: 2.2rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-mid); text-decoration: none;
+      font-size: 0.87rem; font-weight: 500; transition: var(--t);
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green) !important; color: white !important;
+      padding: 0.5rem 1.35rem; border-radius: 50px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(58,125,90,0.3); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--t); }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: rgba(250,253,248,0.98); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--text); text-decoration: none;
+      font-size: 1.6rem; font-weight: 600; transition: var(--t);
+    }
+    .mobile-menu a:hover { color: var(--green); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 5vw 4rem;
+      background: linear-gradient(135deg, var(--bg) 0%, #edf6ee 100%);
+      position: relative; overflow: hidden;
+      gap: 3rem;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -20%; right: -10%;
+      width: 70vw; height: 70vw; max-width: 700px; max-height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(95,168,124,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -15%; left: -5%;
+      width: 50vw; height: 50vw; max-width: 500px; max-height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(58,125,90,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-text { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green-pale); color: var(--green-dark);
+      font-size: 0.77rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.45rem 1rem; border-radius: 50px; margin-bottom: 1.8rem;
+    }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: var(--green-dark); line-height: 1.1; margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .hero h1 em { font-style: italic; color: var(--green); }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      color: var(--text-mid); margin-bottom: 1.5rem; font-weight: 400;
+    }
+    .hero-desc {
+      font-size: 1rem; color: var(--text-muted); max-width: 480px;
+      margin-bottom: 2.5rem; line-height: 1.85;
+    }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-family: 'Inter', sans-serif; font-size: 0.93rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: all var(--t); border: none;
+    }
+    .btn-primary {
+      background: var(--green); color: white;
+      box-shadow: 0 4px 20px rgba(58,125,90,0.28);
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(58,125,90,0.35); }
+    .btn-outline {
+      background: transparent; color: var(--green); border: 1.5px solid var(--green);
+    }
+    .btn-outline:hover { background: var(--green-pale); transform: translateY(-2px); }
+    .btn-white { background: white; color: var(--green-dark); box-shadow: var(--shadow-sm); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    /* Hero photo */
+    .hero-photo-wrap {
+      position: relative; z-index: 1;
+      display: flex; justify-content: center; align-items: flex-end;
+    }
+    .hero-photo-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, var(--green-pale) 0%, var(--green-ghost) 100%);
+      border-radius: 60% 60% 50% 50%;
+      width: 90%; height: 95%;
+      left: 5%; bottom: 0;
+    }
+    .hero-photo {
+      position: relative; z-index: 1;
+      width: min(360px, 90%);
+      border-radius: 50% 50% 40% 40%;
+      object-fit: cover; object-position: top center;
+      aspect-ratio: 3/4;
+      display: block;
+      filter: drop-shadow(0 20px 60px rgba(42,92,65,0.22));
+    }
+    .hero-chip {
+      position: absolute; z-index: 2;
+      background: white; border-radius: var(--radius); padding: 0.85rem 1.2rem;
+      box-shadow: var(--shadow); display: flex; align-items: center; gap: 0.7rem;
+    }
+    .hero-chip-1 { bottom: 12%; left: -4%; }
+    .hero-chip-2 { top: 20%; right: -6%; }
+    .chip-icon { font-size: 1.4rem; }
+    .chip-val { font-weight: 700; font-size: 1.1rem; color: var(--green-dark); line-height: 1; }
+    .chip-lbl { font-size: 0.72rem; color: var(--text-muted); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--green-dark); padding: 1.5rem 2rem;
+    }
+    .trust-inner {
+      max-width: 1100px; margin: auto;
+      display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap;
+    }
+    .trust-item { text-align: center; }
+    .trust-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: white; line-height: 1; }
+    .trust-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.65); margin-top: 0.3rem; font-weight: 500; letter-spacing: 0.05em; }
+
+    /* ── LAYOUT ── */
+    section { padding: 5.5rem 2rem; }
+    .container { max-width: 1140px; margin: auto; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 0.8rem;
+    }
+    .section-tag::before { content: ''; display: block; width: 20px; height: 2px; background: var(--green); border-radius: 2px; }
+    h2.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 600;
+      color: var(--text); margin-bottom: 1rem; line-height: 1.25;
+    }
+    .section-subtitle { color: var(--text-muted); font-size: 1.02rem; max-width: 580px; line-height: 1.85; }
+    .section-header { margin-bottom: 3.5rem; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-subtitle { margin: 0 auto; }
+    .section-header.center .section-tag { justify-content: center; }
+    .section-header.center .section-tag::before { display: none; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img {
+      width: 100%; aspect-ratio: 3/4; max-height: 560px; object-fit: cover; object-position: top;
+      border-radius: var(--radius-xl); display: block;
+      box-shadow: var(--shadow);
+    }
+    .about-deco {
+      position: absolute; top: -16px; left: -16px; right: 16px; bottom: -16px;
+      border: 2px solid var(--green-pale); border-radius: var(--radius-xl);
+      z-index: -1;
+    }
+    .about-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--green); color: white;
+      padding: 1.1rem 1.4rem; border-radius: var(--radius);
+      box-shadow: var(--shadow); text-align: center;
+    }
+    .about-badge strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; line-height: 1; }
+    .about-badge span { font-size: 0.73rem; opacity: 0.85; }
+    .about-text .section-title { margin-bottom: 0.75rem; }
+    .about-text .section-subtitle { margin-bottom: 1.75rem; }
+    .certs-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+    .certs-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.9rem; color: var(--text-mid);
+    }
+    .cert-dot {
+      width: 20px; height: 20px; border-radius: 50%; background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem;
+      font-size: 0.65rem; color: var(--green-dark);
+    }
+    .values-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .value-card {
+      background: var(--surface); border: 1px solid var(--border-soft);
+      border-radius: var(--radius); padding: 1.25rem; transition: var(--t);
+    }
+    .value-card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .value-icon { font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
+    .value-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .value-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--surface); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: white; border-radius: var(--radius-lg); padding: 2rem;
+      border: 1px solid var(--border-soft); transition: all var(--t);
+      display: flex; flex-direction: column;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--green-pale); }
+    .service-card.featured {
+      background: var(--green); color: white; border-color: var(--green);
+    }
+    .service-card.featured h3, .service-card.featured p { color: white; }
+    .service-card.featured .service-price { color: rgba(255,255,255,0.9); }
+    .service-card.featured .service-tag { background: rgba(255,255,255,0.2); color: white; }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .service-tag {
+      display: inline-block; background: var(--green-pale); color: var(--green-dark);
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.25rem 0.7rem; border-radius: 50px; margin-bottom: 0.9rem; width: fit-content;
+    }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .service-list { list-style: none; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.45rem; }
+    .service-list li { font-size: 0.83rem; color: var(--text-mid); display: flex; gap: 0.5rem; align-items: flex-start; }
+    .service-card.featured .service-list li { color: rgba(255,255,255,0.85); }
+    .service-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .service-card.featured .service-list li::before { color: rgba(255,255,255,0.9); }
+    .service-price {
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; color: var(--green);
+      margin-top: 1.25rem; padding-top: 1.25rem;
+      border-top: 1px solid var(--border-soft);
+    }
+    .service-card.featured .service-price { border-color: rgba(255,255,255,0.2); }
+
+    /* ── PROCESS ── */
+    #process { background: var(--bg); }
+    .process-track { position: relative; }
+    .process-track::before {
+      content: ''; position: absolute; top: 30px; left: calc(50% - 1px);
+      width: 2px; height: calc(100% - 60px);
+      background: linear-gradient(to bottom, var(--green-pale), var(--green), var(--green-pale));
+      z-index: 0;
+    }
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 6rem; position: relative; z-index: 1; }
+    .process-step { background: white; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-soft); transition: var(--t); }
+    .process-step:hover { box-shadow: var(--shadow-sm); border-color: var(--green-pale); }
+    .process-step:nth-child(even) { margin-top: 3rem; }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green-pale); color: var(--green-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .process-step h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+    .process-step p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── APPROACH ── */
+    #approach { background: var(--surface); }
+    .approach-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .approach-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .approach-item { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .approach-num {
+      width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
+      background: var(--green); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.88rem;
+    }
+    .approach-item h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+    .approach-item p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.7; }
+    .approach-quote {
+      background: var(--green-dark); color: white;
+      border-radius: var(--radius-xl); padding: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .approach-quote::before {
+      content: '"'; position: absolute; top: -1rem; left: 1.5rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 10rem;
+      color: rgba(255,255,255,0.07); line-height: 1;
+    }
+    .approach-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem; font-style: italic; line-height: 1.6;
+      color: rgba(255,255,255,0.92); position: relative;
+    }
+    .approach-quote cite {
+      display: block; margin-top: 1.5rem; font-style: normal;
+      font-size: 0.82rem; color: rgba(255,255,255,0.55);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--bg); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial-card {
+      background: white; border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg); padding: 2rem; transition: all var(--t);
+    }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--green-pale); }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .t-text { color: var(--text-mid); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+    .t-author { display: flex; align-items: center; gap: 0.8rem; }
+    .t-avatar {
+      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+      background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--green-dark); font-size: 1rem;
+    }
+    .t-name { font-weight: 700; font-size: 0.88rem; color: var(--text); }
+    .t-meta { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='1.5' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+    }
+    .cta-inner { position: relative; max-width: 640px; margin: auto; }
+    .cta-banner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600;
+      color: white; margin-bottom: 1rem; line-height: 1.2;
+    }
+    .cta-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; line-height: 1.7; }
+    .cta-chips {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+    .cta-chip {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: white; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem; font-weight: 500;
+    }
+
+    /* ── FAQ ── */
+    #faq { background: var(--surface); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem; }
+    .faq-item {
+      background: white; border: 1px solid var(--border-soft);
+      border-radius: var(--radius); overflow: hidden; transition: var(--t);
+    }
+    .faq-item.open { border-color: var(--green-pale); box-shadow: var(--shadow-sm); }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 1.5rem; cursor: pointer; user-select: none;
+    }
+    .faq-question span { font-weight: 600; font-size: 0.92rem; color: var(--text); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green); font-size: 1.2rem; transition: transform var(--t); flex-shrink: 0; margin-left: 1rem;
+    }
+    .faq-item.open .faq-icon { background: var(--green); color: white; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 240px; }
+    .faq-answer p { padding: 0 1.5rem 1.25rem; color: var(--text-muted); font-size: 0.88rem; line-height: 1.85; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 3.5rem; align-items: start; }
+    .contact-form {
+      background: white; border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl); padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block; font-size: 0.77rem; font-weight: 700;
+      color: var(--text-mid); margin-bottom: 0.45rem;
+      text-transform: uppercase; letter-spacing: 0.07em;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 0.8rem 1rem; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: var(--t); outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--green); background: white;
+      box-shadow: 0 0 0 3px rgba(58,125,90,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237a9988' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center;
+      background-size: 12px;
+    }
+
+    .contact-side { display: flex; flex-direction: column; gap: 1.1rem; }
+    .contact-card {
+      background: white; border: 1px solid var(--border-soft);
+      border-radius: var(--radius); padding: 1.2rem 1.4rem;
+      display: flex; align-items: center; gap: 1rem; transition: var(--t);
+    }
+    .contact-card:hover { border-color: var(--green-pale); box-shadow: var(--shadow-sm); }
+    .contact-card-icon {
+      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+      background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .cc-label { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
+    .cc-val { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .cc-val a { color: var(--text); text-decoration: none; transition: var(--t); }
+    .cc-val a:hover { color: var(--green); }
+
+    .social-section { margin-top: 0.5rem; }
+    .social-label { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.75rem; }
+    .social-links { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: white; border: 1px solid var(--border-soft);
+      border-radius: 50px; padding: 0.5rem 1.05rem;
+      color: var(--text-mid); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: var(--t);
+    }
+    .social-link:hover { border-color: var(--green); color: var(--green); box-shadow: var(--shadow-sm); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark); color: rgba(255,255,255,0.75);
+      padding: 4rem 2rem 2.5rem;
+    }
+    .footer-grid {
+      max-width: 1140px; margin: auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;
+    }
+    .footer-logo-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      font-weight: 600; color: white; display: block; margin-bottom: 0.2rem;
+    }
+    .footer-logo-sub { font-size: 0.7rem; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; }
+    .footer-brand p { margin-top: 1rem; font-size: 0.87rem; line-height: 1.75; max-width: 280px; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col ul a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.87rem; transition: var(--t); }
+    .footer-col ul a:hover { color: white; }
+    .footer-bottom {
+      max-width: 1140px; margin: auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    /* ── BACK TO TOP ── */
+    .btt {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); color: white; border: none; cursor: pointer;
+      font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+      transition: all var(--t); opacity: 0; pointer-events: none;
+      box-shadow: 0 4px 20px rgba(58,125,90,0.35); z-index: 100;
+    }
+    .btt.visible { opacity: 1; pointer-events: all; }
+    .btt:hover { transform: translateY(-3px); background: var(--green-dark); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+    .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .fade-up:nth-child(5) { transition-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; text-align: center; }
+      .hero-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo { width: min(280px, 70vw); }
+      .hero-chip-1, .hero-chip-2 { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-wrap { max-width: 340px; margin: auto; }
+      .about-badge { right: -0.5rem; bottom: -0.5rem; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step:nth-child(even) { margin-top: 0; }
+      .process-track::before { display: none; }
+      .approach-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 1.5rem; }
+      .values-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      .trust-inner { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-name">Тетяна Пахалюк</span>
+    <span class="nav-logo-title">Нутриціолог · Чернігів</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Про мене</a></li>
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#process">Як я працюю</a></li>
+    <li><a href="#testimonials">Відгуки</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Записатися</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">Про мене</a>
+  <a href="#services" onclick="closeMenu()">Послуги</a>
+  <a href="#process" onclick="closeMenu()">Як я працюю</a>
+  <a href="#testimonials" onclick="closeMenu()">Відгуки</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Записатися</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <span class="hero-badge">Сертифікований нутриціолог</span>
+    <h1>Тетяна<br><em>Пахалюк</em></h1>
+    <p class="hero-sub">Ваш шлях до здоров'я через харчування</p>
+    <p class="hero-desc">Допомагаю людям знайти баланс, покращити самопочуття та досягти стабільних результатів — без стресу, жорстких дієт і голодування.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Записатися на консультацію</a>
+      <a href="#services" class="btn btn-outline">Мої послуги</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-bg"></div>
+    <img src="Tetiana.jpg" alt="Тетяна Пахалюк — нутриціолог Чернігів" class="hero-photo" />
+    <div class="hero-chip hero-chip-1">
+      <span class="chip-icon">🌿</span>
+      <div>
+        <div class="chip-val">5+ років</div>
+        <div class="chip-lbl">практики</div>
+      </div>
+    </div>
+    <div class="hero-chip hero-chip-2">
+      <span class="chip-icon">👤</span>
+      <div>
+        <div class="chip-val">200+</div>
+        <div class="chip-lbl">клієнтів</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-num">200+</div><div class="trust-lbl">Задоволених клієнтів</div></div>
+    <div class="trust-item"><div class="trust-num">5+</div><div class="trust-lbl">Років практики</div></div>
+    <div class="trust-item"><div class="trust-num">Online</div><div class="trust-lbl">По всій Україні</div></div>
+    <div class="trust-item"><div class="trust-num">100%</div><div class="trust-lbl">Індивідуальний підхід</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-up">
+        <div class="about-deco"></div>
+        <img src="Tetiana.jpg" alt="Тетяна Пахалюк нутриціолог" class="about-img" />
+        <div class="about-badge">
+          <strong>5+</strong>
+          <span>років у нутриціології</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Про мене</span>
+        <h2 class="section-title">Сертифікований нутриціолог із Чернігова</h2>
+        <p class="section-subtitle">Мене звати Тетяна Пахалюк. Я сертифікований нутриціолог з багаторічним досвідом роботи. Вірю, що здорове харчування — це не покарання, а задоволення та турбота про себе.</p>
+        <ul class="certs-list">
+          <li>
+            <span class="cert-dot">✓</span>
+            Сертифікат нутриціолога / дієтолога
+          </li>
+          <li>
+            <span class="cert-dot">✓</span>
+            Спеціалізація: корекція ваги, травлення, жіноче здоров'я
+          </li>
+          <li>
+            <span class="cert-dot">✓</span>
+            Постійне підвищення кваліфікації та навчання
+          </li>
+          <li>
+            <span class="cert-dot">✓</span>
+            Онлайн-консультації для клієнтів по всій Україні
+          </li>
+        </ul>
+        <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85;">Мій підхід заснований на науково підтверджених даних та глибокому розумінні індивідуальних потреб кожної людини. Не даю «чарівних» таблеток — тільки системну роботу з реальними результатами.</p>
+        <div class="values-row">
+          <div class="value-card fade-up">
+            <span class="value-icon">🔬</span>
+            <h4>Науковий підхід</h4>
+            <p>Рекомендації базуються на актуальних дослідженнях та доказовій медицині.</p>
+          </div>
+          <div class="value-card fade-up">
+            <span class="value-icon">🎯</span>
+            <h4>Індивідуальність</h4>
+            <p>Жодних шаблонних рекомендацій — тільки ваші особливості та цілі.</p>
+          </div>
+          <div class="value-card fade-up">
+            <span class="value-icon">🤝</span>
+            <h4>Підтримка</h4>
+            <p>Завжди на зв'язку, щоб допомогти подолати труднощі та утримати результат.</p>
+          </div>
+          <div class="value-card fade-up">
+            <span class="value-icon">🌱</span>
+            <h4>Довгостроковий результат</h4>
+            <p>Не дієта, а нова звичка — щоб зміни залишалися назавжди.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Послуги</span>
+      <h2 class="section-title">Як я можу допомогти</h2>
+      <p class="section-subtitle">Вибирайте формат, який підходить саме вам — від разової консультації до комплексного супроводу.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <span class="service-icon">🥗</span>
+        <span class="service-tag">Стартова</span>
+        <h3>Перша консультація</h3>
+        <p>Знайомство, збір анамнезу, аналіз поточного раціону та постановка цілей. Отримаєте перші рекомендації та план дій.</p>
+        <ul class="service-list">
+          <li>Тривалість 60–90 хвилин</li>
+          <li>Онлайн або офлайн</li>
+          <li>Аналіз щоденника харчування</li>
+          <li>Базові рекомендації</li>
+        </ul>
+        <span class="service-price">від 800 грн</span>
+      </div>
+      <div class="service-card featured fade-up">
+        <span class="service-icon">📋</span>
+        <span class="service-tag">Популярне</span>
+        <h3>Персональний план харчування</h3>
+        <p>Індивідуальний раціон, розроблений під ваш спосіб життя, смакові уподобання, стан здоров'я та цілі.</p>
+        <ul class="service-list">
+          <li>Повний аналіз стану здоров'я</li>
+          <li>Меню на 2–4 тижні</li>
+          <li>Список продуктів та рецепти</li>
+          <li>Підтримка протягом 2 тижнів</li>
+          <li>Коригування раціону</li>
+        </ul>
+        <span class="service-price">від 1 800 грн</span>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">🏆</span>
+        <span class="service-tag">Комплекс</span>
+        <h3>Супровід 1–3 місяці</h3>
+        <p>Повний комплексний супровід для стабільних змін: харчування, корекція ваги, робота зі звичками та мотивацією.</p>
+        <ul class="service-list">
+          <li>Щотижневі зустрічі</li>
+          <li>Постійне коригування плану</li>
+          <li>Необмежені питання в чаті</li>
+          <li>Аналіз аналізів та складу тіла</li>
+          <li>Підтримка між сесіями</li>
+        </ul>
+        <span class="service-price">від 3 500 грн/міс</span>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">💬</span>
+        <span class="service-tag">Онлайн</span>
+        <h3>Онлайн-консультація</h3>
+        <p>Зручна консультація у відеоформаті — Zoom або Telegram. Ідеально якщо ви не з Чернігова, але хочете отримати допомогу.</p>
+        <ul class="service-list">
+          <li>Відеозв'язок 60 хвилин</li>
+          <li>Запис консультації</li>
+          <li>PDF з рекомендаціями</li>
+          <li>По всій Україні</li>
+        </ul>
+        <span class="service-price">від 700 грн</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Як я працюю</span>
+      <h2 class="section-title">Шлях до результату</h2>
+      <p class="section-subtitle">Прозорий і зрозумілий процес, де кожен крок наближає вас до мети.</p>
+    </div>
+    <div class="process-track">
+      <div class="process-grid">
+        <div class="process-step fade-up">
+          <div class="step-num">1</div>
+          <h3>Заявка та знайомство</h3>
+          <p>Ви заповнюєте коротку анкету або пишете мені. Я відповідаю протягом дня та призначаю зручний час консультації.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">2</div>
+          <h3>Первинна консультація</h3>
+          <p>Докладне інтерв'ю: мета, стиль харчування, стан здоров'я, лабораторні аналізи (якщо є), спосіб життя і стрес-фактори.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">3</div>
+          <h3>Розробка плану</h3>
+          <p>На основі зібраних даних створюю персональні рекомендації та план харчування — реалістичний, з урахуванням ваших уподобань.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">4</div>
+          <h3>Впровадження</h3>
+          <p>Ви починаєте діяти, а я підтримую: відповідаю на запитання, допомагаю адаптувати план під реальне життя.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">5</div>
+          <h3>Моніторинг прогресу</h3>
+          <p>Регулярні зустрічі для відстеження результатів, коригування плану та вирішення труднощів, що виникають.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">6</div>
+          <h3>Закріплення результату</h3>
+          <p>Формуємо нові звички, які залишаться з вами після закінчення програми. Підтримуємо зміни у довготривалій перспективі.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="container">
+    <div class="approach-inner">
+      <div>
+        <span class="section-tag">Мій підхід</span>
+        <h2 class="section-title">Харчування, яке вам підходить</h2>
+        <p class="section-subtitle" style="margin-bottom:2.5rem;">Я не вірю у «чарівні» дієти та жорсткі обмеження. Мій підхід — гнучкий, науково обґрунтований та стійкий.</p>
+        <div class="approach-list">
+          <div class="approach-item fade-up">
+            <div class="approach-num">01</div>
+            <div>
+              <h4>Слухаю ваше тіло</h4>
+              <p>Кожна людина унікальна. Симптоми, аналізи, стиль життя — усе враховується при розробці рекомендацій.</p>
+            </div>
+          </div>
+          <div class="approach-item fade-up">
+            <div class="approach-num">02</div>
+            <div>
+              <h4>Без заборон та голодування</h4>
+              <p>Здорове харчування — не покарання. Вчу харчуватися смачно і збалансовано, без відмови від улюблених продуктів.</p>
+            </div>
+          </div>
+          <div class="approach-item fade-up">
+            <div class="approach-num">03</div>
+            <div>
+              <h4>Системна робота зі звичками</h4>
+              <p>Змінюємо не тільки їжу, а й ставлення до неї. Формуємо здорові патерни харчової поведінки.</p>
+            </div>
+          </div>
+          <div class="approach-item fade-up">
+            <div class="approach-num">04</div>
+            <div>
+              <h4>Міждисциплінарний погляд</h4>
+              <p>При потребі направлю до профільних лікарів. Харчування — частина загальної картини здоров'я.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="approach-quote fade-up">
+        <p>Їжа — не ворог і не ліки. Це задоволення, енергія і турбота про себе. Моя задача — допомогти вам знайти саме цей баланс.</p>
+        <cite>— Тетяна Пахалюк, нутриціолог</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Відгуки</span>
+      <h2 class="section-title">Що кажуть мої клієнти</h2>
+      <p class="section-subtitle">Реальні результати — найкраще підтвердження якості роботи.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«За 3 місяці роботи з Тетяною я схудла на 9 кг без жодного голодування. Вона пояснила, чому моє тіло "чіплялося" за вагу, і ми вирішили це разом. Рекомендую всім!»</p>
+        <div class="t-author">
+          <div class="t-avatar">О</div>
+          <div>
+            <div class="t-name">Оксана К.</div>
+            <div class="t-meta">Чернігів · корекція ваги</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«Після вагітності мій раціон був хаотичним, і я постійно почувалась стомленою. Тетяна склала план, який вписується у моє щоденне життя з дитиною. Вже за місяць енергія повернулась!»</p>
+        <div class="t-author">
+          <div class="t-avatar">М</div>
+          <div>
+            <div class="t-name">Марина Г.</div>
+            <div class="t-meta">Київ · онлайн-супровід</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«Мав проблеми з ШКТ роками. Тетяна допомогла виявити тригерні продукти та скорегувати раціон. Тепер живу нормально — без болю та дискомфорту після їжі.»</p>
+        <div class="t-author">
+          <div class="t-avatar">А</div>
+          <div>
+            <div class="t-name">Андрій Л.</div>
+            <div class="t-meta">Харків · травлення</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«Зверталась із запитанням про харчування при гіпотиреозі. Тетяна дала конкретні, практичні рекомендації — не загальні фрази. Відчула різницю вже через кілька тижнів.»</p>
+        <div class="t-author">
+          <div class="t-avatar">Н</div>
+          <div>
+            <div class="t-name">Наталія В.</div>
+            <div class="t-meta">Суми · жіноче здоров'я</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«Спочатку скептично ставився до нутриціологів. Але Тетяна розвіяла всі мої сумніви: жодного езотеричного, тільки наука та практика. Схуд на 7 кг, результат тримається вже 8 місяців.»</p>
+        <div class="t-author">
+          <div class="t-avatar">В</div>
+          <div>
+            <div class="t-name">Василь П.</div>
+            <div class="t-meta">Чернігів · корекція ваги</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«Дуже зручний онлайн-формат — живу в Дніпрі, але це не завада. Тетяна завжди на зв'язку, відповідає швидко і по суті. Найкраща інвестиція у здоров'я цього року!»</p>
+        <div class="t-author">
+          <div class="t-avatar">Ю</div>
+          <div>
+            <div class="t-name">Юлія Р.</div>
+            <div class="t-meta">Дніпро · онлайн-консультація</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2>Готові змінити своє ставлення до їжі?</h2>
+    <p>Перша консультація — це вже крок до кращого самопочуття. Записуйтесь зараз і отримайте індивідуальний підхід.</p>
+    <div class="cta-chips">
+      <span class="cta-chip">🌿 Без жорстких дієт</span>
+      <span class="cta-chip">📱 Онлайн або офлайн</span>
+      <span class="cta-chip">🎯 Індивідуальний план</span>
+    </div>
+    <a href="#contact" class="btn btn-white">Записатися на консультацію →</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Часті запитання</h2>
+      <p class="section-subtitle">Не знайшли відповідь? Напишіть мені — відповім особисто.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Чим нутриціолог відрізняється від дієтолога?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Дієтолог — це лікар з медичною освітою, який лікує хвороби харчуванням. Нутриціолог — спеціаліст із здорового харчування, який займається профілактикою, оптимізацією раціону та корекцією ваги у здорових людей. При серйозних захворюваннях я завжди рекомендую паралельно консультуватися з лікарем.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Чи можна отримати консультацію онлайн?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Так, більшість моїх клієнтів саме онлайн! Ми проводимо відеозустрічі через Zoom або Google Meet. Все необхідне — правильно заповнена анкета та відеозв'язок. Формат нічим не поступається особистій зустрічі.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Чи потрібно здавати аналізи перед консультацією?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Не обов'язково, але дуже бажано — особливо загальний аналіз крові, ферити, вітамін D та гормони щитоподібної залози. Якщо аналізи є — беріть із собою. Якщо немає — проведемо консультацію і я порекомендую, що здати для точнішого результату.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Скільки часу займе досягнення результату?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Залежить від мети та вашого вихідного стану. Перші зміни в самопочутті помітні вже через 2–4 тижні. Стабільна корекція ваги — 1–2 кг на місяць (без стресу для організму). Для закріплення результату рекомендую супровід мінімум 2–3 місяці.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Чи підходить консультація вегетаріанцям або при харчових обмеженнях?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Звісно! Я маю досвід роботи з вегетаріанцями, людьми з непереносимістю лактози та глютену, а також тими, у кого є харчові алергії. Ваш план буде адаптований з урахуванням усіх обмежень.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Що входить у вартість консультації?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Первинна консультація включає збір анамнезу, аналіз поточного харчування та базові рекомендації. У розширених пакетах — персональний план харчування, рецепти, список продуктів та підтримка в чаті. Детальніше — у розділі «Послуги».</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Контакти</span>
+      <h2 class="section-title">Записатися на консультацію</h2>
+      <p class="section-subtitle">Заповніть форму або напишіть мені напряму — відповім протягом дня.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <div class="form-group">
+          <label for="name">Ваше ім'я</label>
+          <input type="text" id="name" name="name" placeholder="Ім'я та прізвище" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон або Telegram</label>
+          <input type="text" id="phone" name="phone" placeholder="+380 XX XXX XX XX" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Електронна пошта</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="service">Послуга</label>
+          <select id="service" name="service">
+            <option value="">Оберіть послугу...</option>
+            <option>Перша консультація</option>
+            <option>Персональний план харчування</option>
+            <option>Супровід 1–3 місяці</option>
+            <option>Онлайн-консультація</option>
+            <option>Не визначився — потрібна порада</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="goal">Ваша мета або запит</label>
+          <textarea id="goal" name="goal" placeholder="Коротко опишіть свій запит або ціль — наприклад, схуднення, покращення енергії, налагодження травлення тощо..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Надіслати заявку →</button>
+      </form>
+
+      <div class="contact-side">
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div>
+            <div class="cc-label">Телефон / Viber / Telegram</div>
+            <div class="cc-val"><a href="tel:+380000000000">+380 XX XXX XX XX</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div>
+            <div class="cc-label">Email</div>
+            <div class="cc-val"><a href="mailto:tetiana@pakhaliuk.com">tetiana@pakhaliuk.com</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div>
+            <div class="cc-label">Місто</div>
+            <div class="cc-val">Чернігів, Україна</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🕐</div>
+          <div>
+            <div class="cc-label">Час роботи</div>
+            <div class="cc-val">Пн–Пт, 9:00 – 19:00</div>
+          </div>
+        </div>
+        <div class="social-section">
+          <div class="social-label">Соціальні мережі</div>
+          <div class="social-links">
+            <a href="#" class="social-link">📸 Instagram</a>
+            <a href="#" class="social-link">✈️ Telegram</a>
+            <a href="#" class="social-link">📘 Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo-name">Тетяна Пахалюк</span>
+      <span class="footer-logo-sub">Нутриціолог · Чернігів</span>
+      <p>Допомагаю людям покращити здоров'я та якість життя через грамотне, смачне і збалансоване харчування. Індивідуальний підхід, науковий погляд, реальні результати.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навігація</h4>
+      <ul>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#process">Як я працюю</a></li>
+        <li><a href="#testimonials">Відгуки</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакти</h4>
+      <ul>
+        <li><a href="tel:+380000000000">+380 XX XXX XX XX</a></li>
+        <li><a href="mailto:tetiana@pakhaliuk.com">tetiana@pakhaliuk.com</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Telegram</a></li>
+        <li><a href="#contact">Записатися</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Тетяна Пахалюк — Нутриціолог. Усі права захищено.</p>
+    <p>Зроблено з <span style="color:rgba(255,255,255,0.5)">♥</span> у Чернігові</p>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Вгору">↑</button>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const btt = document.getElementById('btt');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    btt.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  function toggleMenu() {
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    h.classList.toggle('active');
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('active');
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Тетяна Пахалюк",
+      "jobTitle": "Нутриціолог",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Чернігів",
+        "addressCountry": "UA"
+      },
+      "url": "https://pakhaliuk.com",
+      "description": "Сертифікований нутриціолог з Чернігова. Індивідуальні консультації з харчування, корекція ваги, персональний план харчування."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Чим нутриціолог відрізняється від дієтолога?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нутриціолог — спеціаліст із здорового харчування, який займається профілактикою та оптимізацією раціону у здорових людей."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чи можна отримати консультацію онлайн?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Так, більшість клієнтів отримують консультації онлайн через Zoom або Google Meet."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
