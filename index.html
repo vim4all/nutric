@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .hp-field { position: absolute; left: -9999px; opacity: 0; pointer-events: none; height: 0; overflow: hidden; }
 
     :root {
       --green:       #3a7d5a;
@@ -1037,7 +1038,7 @@
       <p class="section-subtitle">Заповніть форму або напишіть мені напряму — відповім протягом дня.</p>
     </div>
     <div class="contact-grid">
-      <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <form class="contact-form" id="contactForm">
         <div class="form-group">
           <label for="name">Ваше ім'я</label>
           <input type="text" id="name" name="name" placeholder="Ім'я та прізвище" required />
@@ -1065,7 +1066,11 @@
           <label for="goal">Ваша мета або запит</label>
           <textarea id="goal" name="goal" placeholder="Коротко опишіть свій запит або ціль — наприклад, схуднення, покращення енергії, налагодження травлення тощо..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Надіслати заявку →</button>
+        <div class="hp-field" aria-hidden="true">
+          <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+        </div>
+        <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">Надіслати заявку →</button>
+        <div id="formMsg" style="display:none;margin-top:1rem;padding:0.85rem 1rem;border-radius:var(--radius);font-size:0.88rem;text-align:center;"></div>
       </form>
 
       <div class="contact-side">
@@ -1146,6 +1151,57 @@
 </footer>
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Вгору">↑</button>
+
+<script>
+  // Paste your Google Apps Script web app URL here after deploying it
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9smykGSqIXNOztk9u1d6E4oxN1r5HPZUgnILuMFKaKVx4nj5B1dimHqzc3Y2oJlvz/exec';
+
+  function showFormSuccess(msg, form) {
+    msg.style.display = 'block';
+    msg.style.background = 'var(--green-pale)';
+    msg.style.color = 'var(--green-dark)';
+    msg.textContent = '✓ Заявку надіслано! Я зв\'яжусь з вами протягом дня.';
+    form.reset();
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('formMsg');
+    const form = e.target;
+
+    if (form.honeypot.value) {
+      showFormSuccess(msg, form);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Надсилаємо...';
+
+    const params = new URLSearchParams({
+      name:    form.name.value,
+      phone:   form.phone.value,
+      email:   form.email.value,
+      service: form.service.value,
+      goal:    form.goal.value,
+    });
+
+    fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params })
+      .then(() => {
+        showFormSuccess(msg, form);
+      })
+      .catch(() => {
+        msg.style.display = 'block';
+        msg.style.background = '#fde8e8';
+        msg.style.color = '#c0392b';
+        msg.textContent = 'Помилка. Будь ласка, напишіть мені напряму.';
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Надіслати заявку →';
+      });
+  });
+</script>
 
 <script>
   const navbar = document.getElementById('navbar');
